@@ -1,0 +1,53 @@
+html {
+  --backgroundColor: #9bc45c;
+  --mainColor: #2a371b;
+  --blockSize: 20px;
+  --sectionWidth: 700px;
+  --sectionHeight: 500px;
+  height: 100%;
+}
+
+body {
+  background: var(--backgroundColor);
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#board {
+  width: var(--sectionWidth);
+  height: var(--sectionHeight);
+  border: 5px solid var(--mainColor);
+  position: relative;
+}
+
+.snake {
+  position: absolute;
+  width: var(--blockSize);
+  height: var(--blockSize);
+  background: var(--mainColor);
+}
+
+.goal {
+  position: absolute;
+  left: calc(8 * var(--blockSize));
+  top: calc(5 * var(--blockSize));
+  width: var(--blockSize);
+  height: var(--blockSize);
+}
+
+.goal::after {
+  position: absolute;
+  content: "*";
+  color: var(--backgroundColor);
+  text-align: center;
+  background: var(--mainColor);
+  border-radius: 50%/80%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  top: 10%;
+  display: block;
+}
